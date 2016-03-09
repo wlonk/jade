@@ -14,7 +14,7 @@ A document is structured like a tree in memory, but is serialized into a number
 of lines when represented as a file. Reconciling these two structures is
 central to templating.
 
-*This deviates from the reference implementation.*
+**This deviates from the reference implementation.**
 
 All lines with zero leading whitespace characters are children of the root node.
 
@@ -70,5 +70,6 @@ an appropriate doctype to the render function.
 Any subsequent doctype line will be inserted into the document, but will not
 affect rendering.
 
-*This is a deviation from the reference implementation,* in which a doctype tag
-will determine the rendering of all nodes after it, which is again, terrible.
+**This is a deviation from the reference implementation,** in which a doctype
+tag will determine the rendering of all nodes after it, which is again,
+terrible.
