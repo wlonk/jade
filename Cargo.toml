@@ -1,0 +1,6 @@
+[package]
+name = "jade"
+version = "0.1.0"
+authors = ["Kit La Touche <kit@transneptune.net>"]
+
+[dependencies]
