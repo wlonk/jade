@@ -8,6 +8,9 @@ Jade seems not to have a defined spec, only a reference implementation. So here
 I will try to lay out my version of the spec. There are some edge cases where
 it diverges from the reference implementation.
 
+This currently only defines a subset of Jade, including the features I find
+most crucial.
+
 ### Nesting
 
 A document is structured like a tree in memory, but is serialized into a number
@@ -73,3 +76,28 @@ affect rendering.
 **This is a deviation from the reference implementation,** in which a doctype
 tag will determine the rendering of all nodes after it, which is again,
 terrible.
+
+## Tags, attributes, classes, IDs
+
+As per standard Jade, the first word on any line is the tag name, unless:
+
+  * The word begins with a `#`, in which case the tag is a `div` and the word
+    after the `#` is the ID of that `div`.
+  * The word begins with a `.`, in which case the tag is a `div` and the word
+    after the `.` is the class of that div.
+  * The parent line ends with `.`, in which case the whole block is text.
+  * The tag is a reserved word (see below).
+
+## Reserved words
+
+This isn't just a fancy way to write HTML, this is a _templating_ language. So
+we have conditionals, loops, and variable substitution.
+
+This means we need a few reserved words:
+
+  * `if`
+  * `else`
+  * `each`
+  * `extends`
+  * `block`
+  * `|` (pipe)
