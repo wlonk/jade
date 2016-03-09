@@ -1,3 +1,6 @@
+pub mod parser;
+
+
 use std::collections::HashMap;
 
 
