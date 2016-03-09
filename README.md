@@ -27,20 +27,24 @@ parser error.
 
 This means that the following Jade:
 
-    foo
-        bar
-      baz
-    qux
+```jade
+foo
+    bar
+  baz
+qux
+```
 
 is invalid.
 
 (The reference implementation would parse that Jade to:
 
-    <foo>
-      <bar></bar>
-    </foo>
-    <baz></baz>
-    <qux></qux>
+```html
+<foo>
+  <bar></bar>
+</foo>
+<baz></baz>
+<qux></qux>
+```
 
 which, quite frankly, I think is terrible---I think an error is much more
 meaningful.)
