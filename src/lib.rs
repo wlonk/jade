@@ -1,6 +1,10 @@
 use std::collections::HashMap;
 
 
+// This is over-simplistic for a context, but it'll do for a first pass.
+type Context = HashMap<String, String>;
+
+
 enum Doctype {
     Html5,
     Xml,
@@ -24,11 +28,13 @@ impl Jade {
         unimplemented!()
     }
 
-    fn parse(&mut self) -> Result<(), &'static str> {
+    fn parse<S: ?Sized>(&mut self, input: &S) -> Result<(), &'static str> 
+        where S: AsRef<str>
+    {
         unimplemented!()
     }
 
-    fn render(&self) -> String {
+    fn render(&self, context: Context) -> String {
         unimplemented!()
     }
 }
